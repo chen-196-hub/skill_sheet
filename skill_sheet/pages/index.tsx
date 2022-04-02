@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Button from '@material-ui/core/Button'
+import SendIcon from '@mui/icons-material/Send'
 
 
 const Home: NextPage = () => {
@@ -19,7 +20,7 @@ const Home: NextPage = () => {
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
 
-        <Button variant="contained">你好，世界</Button>
+        <Button variant="contained" color="primary" endIcon={<SendIcon />} >hello world</Button>
 
         <p className={styles.description}>
           Get started by editing{' '}
