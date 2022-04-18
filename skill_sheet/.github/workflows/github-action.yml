@@ -21,4 +21,9 @@ jobs:
         run: yarn install
         
       - name: Run test
-        run: yarn test
+        run: |
+          docker-compose build
+          docker-compose up --abort-on-container-exit
+          docker-compose sh
+        working-directory: ./skill_sheet
+        run: docker-compose sh && yarn test
