@@ -1,6 +1,9 @@
 name: Run Jest
 
 on: 
+  push:
+    paths:
+      - 'skill_sheet/**'
   pull_request:
     paths:
       - 'skill_sheet/**'
