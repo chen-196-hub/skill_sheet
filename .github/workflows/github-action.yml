@@ -1,12 +1,8 @@
 name: Run Jest
 
-on:
-  push:
-     paths:
-      - 'skill_sheet/**'
-  pull_request:
-     paths:
-      - 'skill_sheet/**'
+on: [push,pull_request]
+  paths:
+    - 'skill_sheet/**'
 
 defaults:
   run:
@@ -23,7 +19,7 @@ jobs:
       - name: Setup NodeJs
         uses: actions/setup-node@v1
         with:
-          node-version: '14.x'
+          node-version: '10.x'
 
       - name: Yarn Install
         run: yarn install --ignore-engines
