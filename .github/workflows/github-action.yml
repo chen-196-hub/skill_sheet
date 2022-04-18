@@ -1,8 +1,9 @@
 name: Run Jest
 
-on: [push, pull_request]
-  paths:
-    - 'skill_sheet/**'
+on: 
+  pull_request:
+    paths:
+      - 'skill_sheet/**'
 
 defaults:
   run:
