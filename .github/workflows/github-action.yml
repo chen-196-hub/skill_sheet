@@ -1,0 +1,30 @@
+name: Run Jest
+
+on: 
+  push:
+    paths:
+      - 'skill_sheet/**'
+  pull_request:
+    paths:
+      - 'skill_sheet/**'
+
+defaults:
+  run:
+    working-directory: skill_sheet
+
+jobs:
+  build:
+  
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Setup NodeJs
+        uses: actions/setup-node@v1
+
+      - name: Yarn Install
+        run: yarn install --ignore-engines
+        
+      - name: Run test
+        run: yarn ci
